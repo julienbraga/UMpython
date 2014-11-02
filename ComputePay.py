@@ -26,7 +26,7 @@ def compute_pay(hours, rate, otmultiplier):
     pay = (hours * rate) + (othours * otrate)
     return pay
 
-# Function to solicit user input and convert to float type.
+# Function to solicit user input and convert input to float type.
 def get_float_input(varname):
     # Determine which prompt to use when asking for input.
     try:
@@ -40,24 +40,24 @@ def get_float_input(varname):
             userinput = float(userinput)
             break
         except:
-            print 'Enter a numerical value.'
+            print 'Enter a numerical value, such as: 1, 3.4, et cetera.'
             continue
-    # Return the input once a float type is entered.
+    # Return the input once conversion to float type works.
     return userinput
 
 # Get inputs from the user.
 hours = get_float_input('hours')
 rate = get_float_input('rate')
 if hours > 40:
-    print ''
-    print '''The overtime (OT) multiplier is required to calculate the 
-        pay correctly because more than 40 hours were entered. The OT
-        multiplier is the factor by which OT hours and the standard
-        pay rate are multiplied to calculate the correct total pay amount.
-        For example, "time-and-a-half" overtime would be entered as an OT
-        multiplier of 1.5. "Double-time" would be entered as 2.0.
+    print '''
+          The overtime (OT) multiplier is required to calculate the
+          pay correctly because more than 40 hours were entered. The OT
+          multiplier is the factor by which OT hours and the standard
+          pay rate are multiplied to calculate the correct total pay amount.
+          For example, "time-and-a-half" overtime would be entered as an OT
+          multiplier of 1.5. "Double-time" would be entered as 2.0.
         
-        '''
+          '''
     otmultiplier = get_float_input('ot')
 else:
     otmultiplier = 0
